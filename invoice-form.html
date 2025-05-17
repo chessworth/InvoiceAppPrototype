@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Invoice</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="form-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create New Invoice</h1>
+        <form id="invoiceForm">
+            <div class="form-group">
+                <label for="invoiceNumber">Invoice Number:</label>
+                <input type="text" id="invoiceNumber" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="dateCreated">Date Created:</label>
+                <input type="date" id="dateCreated" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="companySelect">Select Company:</label>
+                <select id="companySelect" required>
+                    <option value="">-- Select a company --</option>
+                </select>
+                <button type="button" id="addCompanyBtn">Add New Company</button>
+            </div>
+            
+            <div id="companyDetails" class="company-details">
+                <div class="form-group">
+                    <label>Company Name:</label>
+                    <span id="displayCompanyName"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label>Address:</label>
+                    <span id="displayAddress"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label>Contact:</label>
+                    <span id="displayContact"></span>
+                </div>
+            </div>
+            
+            <h2>Vehicle Details</h2>
+            <div id="itemsContainer">
+                <div class="item-row">
+                    <input type="number" placeholder="Unit" class="item-unit">
+                    <input type="text" placeholder="Plate" class="item-plate">
+                    <input type="text" placeholder="Make" class="item-make">
+                    <input type="text" placeholder="VIN Number" class="item-vin">
+                    <input type="number" placeholder="Odometer" class="item-odometer">
+                    <input type="number" placeholder="Year" class="item-year">
+                    <input type="number" placeholder="Quantity" value="1" class="item-quantity">
+                    <input type="number" placeholder="Price" class="item-price">
+                    <span class="item-total">$0.00</span>
+                </div>
+            </div>
+            <button type="button" id="addItemBtn">Add Vehicle</button>
+            
+            <div class="pricing-section">
+                <div class="pricing-row">
+                    <label for="subtotalInput">Subtotal:</label>
+                    <div class="price-input-container">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="subtotalInput" step="0.01" value="0.00">
+                    </div>
+                </div>
+                <div class="pricing-row">
+                    <label for="hstInput">H.S.T (13%):</label>
+                    <div class="price-input-container">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="hstInput" step="0.01" value="0.00">
+                    </div>
+                </div>
+                <div class="pricing-row total">
+                    <label for="totalInput">Total:</label>
+                    <div class="price-input-container">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="totalInput" step="0.01" value="0.00">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="payment-status">
+                <h3>Payment Status</h3>
+                <div class="status-options">
+                    <div class="status-option">
+                        <input type="radio" id="unpaid" name="paymentStatus" value="unpaid" checked>
+                        <label for="unpaid">Unpaid</label>
+                    </div>
+                    <div class="status-option">
+                        <input type="radio" id="cash" name="paymentStatus" value="cash">
+                        <label for="cash">Cash</label>
+                    </div>
+                    <div class="status-option">
+                        <input type="radio" id="dc" name="paymentStatus" value="dc">
+                        <label for="dc">D/C</label>
+                    </div>
+                    <div class="status-option">
+                        <input type="radio" id="cheque" name="paymentStatus" value="cheque">
+                        <label for="cheque">Cheque</label>
+                    </div>
+                    <div class="status-option">
+                        <input type="radio" id="etransfer" name="paymentStatus" value="etransfer">
+                        <label for="etransfer">E-Transfer</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" id="cancelBtn">Cancel</button>
+                <button type="submit">Generate Invoice</button>
+            </div>
+        </form>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>
+
+
+

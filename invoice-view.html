@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Invoice</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="form-styles.css">
+    <link rel="stylesheet" href="view-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Invoice Details</h1>
+        
+        <div class="invoice-header">
+            <div class="invoice-info">
+                <div class="info-group">
+                    <label>Invoice Number:</label>
+                    <span id="invoiceNumber"></span>
+                </div>
+                <div class="info-group">
+                    <label>Date Created:</label>
+                    <span id="dateCreated"></span>
+                </div>
+                <div class="info-group">
+                    <label>Payment Status:</label>
+                    <span id="paymentStatus"></span>
+                </div>
+            </div>
+            
+            <div class="company-info">
+                <h3>Company Information</h3>
+                <div class="info-group">
+                    <label>Company Name:</label>
+                    <span id="companyName"></span>
+                </div>
+                <div class="info-group">
+                    <label>Address:</label>
+                    <span id="companyAddress"></span>
+                </div>
+                <div class="info-group">
+                    <label>Contact:</label>
+                    <span id="companyContact"></span>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Vehicle Details</h2>
+        <div class="table-container">
+            <table id="itemsTable" class="vehicle-table">
+                <thead>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Plate</th>
+                        <th>Make</th>
+                        <th>VIN Number</th>
+                        <th>Odometer</th>
+                        <th>Year</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="itemsTableBody">
+                    <!-- Items will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="pricing-summary">
+            <div class="pricing-row">
+                <label>Subtotal:</label>
+                <span id="subtotal"></span>
+            </div>
+            <div class="pricing-row">
+                <label>H.S.T (13%):</label>
+                <span id="hst"></span>
+            </div>
+            <div class="pricing-row total">
+                <label>Total:</label>
+                <span id="total"></span>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button id="backBtn">Back to Invoices</button>
+            <button id="editBtn">Edit Invoice</button>
+            <button id="printBtn">Print Invoice</button>
+        </div>
+    </div>
+    <script src="invoice-view.js"></script>
+</body>
+</html>
