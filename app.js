@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hst: 45.5,
                 total: 395.5
             },
-            paymentStatus: "paid"
+            paymentStatus: "cash"
         },
         {
             id: 2002,
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hst: 55.25,
                 total: 480.25
             },
-            paymentStatus: "pending"
+            paymentStatus: "unpaid"
         },
         {
             id: 2003,
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hst: 48.75,
                 total: 423.75
             },
-            paymentStatus: "paid"
+            paymentStatus: "dc"
         },
         {
             id: 2004,
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hst: 65,
                 total: 565
             },
-            paymentStatus: "paid"
+            paymentStatus: "cheque"
         },
         {
             id: 2005,
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hst: 42.25,
                 total: 367.25
             },
-            paymentStatus: "pending"
+            paymentStatus: "etransfer"
         },
         {
             id: 2006,
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hst: 52,
                 total: 452
             },
-            paymentStatus: "paid"
+            paymentStatus: "cash"
         },
         {
             id: 2007,
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hst: 58.5,
                 total: 508.5
             },
-            paymentStatus: "pending"
+            paymentStatus: "unpaid"
         },
         {
             id: 2008,
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hst: 61.75,
                 total: 536.75
             },
-            paymentStatus: "paid"
+            paymentStatus: "dc"
         },
         {
             id: 2009,
@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hst: 68.25,
                 total: 593.25
             },
-            paymentStatus: "pending"
+            paymentStatus: "cheque"
         },
         {
             id: 2010,
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hst: 71.5,
                 total: 621.5
             },
-            paymentStatus: "paid"
+            paymentStatus: "etransfer"
         }
     ];
     
@@ -381,6 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'invoices.html';
     });
 });
+
 
 
 
