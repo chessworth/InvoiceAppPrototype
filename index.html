@@ -17,11 +17,34 @@
             <button id="trackExpenseBtn">Add Expense</button>
             <button id="viewExpensesBtn">View Expenses</button>
         </div>
+        
+        <div class="dashboard" id="dashboard">
+            <div class="dashboard-metrics">
+                <div class="metric-card">
+                    <div class="metric-icon">👥</div>
+                    <div class="metric-value" id="newCompanies">0</div>
+                    <div class="metric-label">New Companies (This Year)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">💰</div>
+                    <div class="metric-value" id="totalRevenue">$0.00</div>
+                    <div class="metric-label">Total Revenue (This Year)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">💸</div>
+                    <div class="metric-value" id="totalExpenses">$0.00</div>
+                    <div class="metric-label">Total Expenses (This Year)</div>
+                </div>
+            </div>
+            <div class="dashboard-summary">
+                <div class="summary-card">
+                    <div class="summary-title">Net Income</div>
+                    <div class="summary-value" id="netIncome">$0.00</div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>
 </html>
-
-
-
 
