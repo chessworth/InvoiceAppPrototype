@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const createCompanyBtn = document.getElementById('createCompanyBtn');
     const viewCompaniesBtn = document.getElementById('viewCompaniesBtn');
     const viewInvoicesBtn = document.getElementById('viewInvoicesBtn');
+    const trackExpenseBtn = document.getElementById('trackExpenseBtn');
+    const viewExpensesBtn = document.getElementById('viewExpensesBtn');
     
     // Sample companies data
     const sampleCompanies = [
@@ -352,6 +354,50 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
     
+    // Sample expenses data
+    const sampleExpenses = [
+        {
+            id: 3001,
+            date: "2023-10-10",
+            amount: 125.50,
+            type: "gas",
+            description: "Monthly fuel expense",
+            companyId: 1001
+        },
+        {
+            id: 3002,
+            date: "2023-10-15",
+            amount: 250.75,
+            type: "utility",
+            description: "Electricity bill",
+            companyId: 1002
+        },
+        {
+            id: 3003,
+            date: "2023-10-20",
+            amount: 350.00,
+            type: "maintenance",
+            description: "Office equipment repair",
+            companyId: 1003
+        },
+        {
+            id: 3004,
+            date: "2023-10-25",
+            amount: 500.00,
+            type: "insurance",
+            description: "Monthly insurance premium",
+            companyId: 1004
+        },
+        {
+            id: 3005,
+            date: "2023-10-30",
+            amount: 75.25,
+            type: "office",
+            description: "Office supplies",
+            companyId: 1005
+        }
+    ];
+    
     // Initialize localStorage if needed
     if (!localStorage.getItem('companies')) {
         localStorage.setItem('companies', JSON.stringify(sampleCompanies));
@@ -363,6 +409,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!localStorage.getItem('lastInvoiceNumber')) {
         localStorage.setItem('lastInvoiceNumber', '1010');
+    }
+    
+    if (!localStorage.getItem('expenses')) {
+        localStorage.setItem('expenses', JSON.stringify(sampleExpenses));
     }
     
     createInvoiceBtn.addEventListener('click', function() {
@@ -380,7 +430,17 @@ document.addEventListener('DOMContentLoaded', function() {
     viewInvoicesBtn.addEventListener('click', function() {
         window.location.href = 'invoices.html';
     });
+    
+    trackExpenseBtn.addEventListener('click', function() {
+        window.location.href = 'expense-form.html';
+    });
+    
+    viewExpensesBtn.addEventListener('click', function() {
+        window.location.href = 'expenses.html';
+    });
 });
+
+
 
 
 

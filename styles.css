@@ -38,6 +38,25 @@ button:hover {
     background-color: #45a049;
 }
 
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin: auto;
+}
+
+#createCompanyBtn, #viewCompaniesBtn {
+    background-color: #afa74c;;
+}
+
+#trackExpenseBtn, #viewExpensesBtn {
+    background-color: #af5b4c;;
+}
+
+#homeButtons {
+    width: 50%;
+}
+
 @media (max-width: 600px) {
     .container {
         margin: 20px auto;
@@ -47,5 +66,9 @@ button:hover {
     button {
         width: 100%;
         margin-bottom: 10px;
+    }
+    
+    #homeButtons {
+        width: 100%;
     }
 }
