@@ -82,14 +82,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.view-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const invoiceId = this.getAttribute('data-id');
-                window.location.href = `invoice-view.html?id=${invoiceId}`;
+                navigateTo('invoice-view.html', { id: invoiceId });
             });
         });
         
         document.querySelectorAll('.edit-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const invoiceId = this.getAttribute('data-id');
-                window.location.href = `invoice-edit.html?id=${invoiceId}`;
+                navigateTo('invoice-edit.html', { id: invoiceId });
             });
         });
         
@@ -192,11 +192,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Event listeners
     backBtn.addEventListener('click', function() {
-        window.location.href = 'index.html';
+        navigateTo('index.html');
     });
     
     createInvoiceBtn.addEventListener('click', function() {
-        window.location.href = 'invoice-form.html';
+        navigateTo('invoice-form.html');
     });
     
     searchBtn.addEventListener('click', searchInvoices);
@@ -286,6 +286,7 @@ document.addEventListener('DOMContentLoaded', function() {
     DELETE FROM invoices WHERE id = :invoiceId;
     */
 });
+
 
 
 

@@ -805,30 +805,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    // Centralized navigation function
+    window.navigateTo = function(page, params = {}) {
+        let url = page;
+        
+        // Add query parameters if provided
+        if (Object.keys(params).length > 0) {
+            const queryParams = new URLSearchParams();
+            for (const key in params) {
+                queryParams.append(key, params[key]);
+            }
+            url += `?${queryParams.toString()}`;
+        }
+        
+        navigateTo(url);
+    };
+    
+    // Store company ID in session storage for pre-selection
+    window.preSelectCompany = function(companyId) {
+        sessionStorage.setItem('preselectedCompany', companyId);
+        navigateTo('invoice-form.html');
+    };
+    
     createInvoiceBtn.addEventListener('click', function() {
-        window.location.href = 'invoice-form.html';
+        navigateTo('invoice-form.html');
     });
     
     createCompanyBtn.addEventListener('click', function() {
-        window.location.href = 'company-form.html';
+        navigateTo('company-form.html');
     });
     
     viewCompaniesBtn.addEventListener('click', function() {
-        window.location.href = 'companies.html';
+        navigateTo('companies.html');
     });
     
     viewInvoicesBtn.addEventListener('click', function() {
-        window.location.href = 'invoices.html';
+        navigateTo('invoices.html');
     });
     
     trackExpenseBtn.addEventListener('click', function() {
-        window.location.href = 'expense-form.html';
+        navigateTo('expense-form.html');
     });
     
     viewExpensesBtn.addEventListener('click', function() {
-        window.location.href = 'expenses.html';
+        navigateTo('expenses.html');
     });
 });
+
 
 
 

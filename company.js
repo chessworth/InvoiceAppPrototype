@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelBtn = document.getElementById('cancelBtn');
     
     cancelBtn.addEventListener('click', function() {
-        window.location.href = 'index.html';
+        navigateTo('index.html');
     });
     
     companyForm.addEventListener('submit', function(e) {
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('companies', JSON.stringify(companies));
         
         alert('Company saved successfully!');
-        window.location.href = 'index.html';
+        navigateTo('index.html');
     });
 });
+

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!companyId) {
         alert('No company ID provided');
-        window.location.href = 'companies.html';
+        navigateTo('companies.html');
         return;
     }
     
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!company) {
             alert('Company not found');
-            window.location.href = 'companies.html';
+            navigateTo('companies.html');
             return;
         }
         
@@ -75,26 +75,26 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.view-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const invoiceId = this.getAttribute('data-id');
-                window.location.href = `invoice-view.html?id=${invoiceId}`;
+                navigateTo('invoice-view.html', { id: invoiceId });
             });
         });
     }
     
     // Event listeners
     backBtn.addEventListener('click', function() {
-        window.location.href = 'companies.html';
+        navigateTo('companies.html');
     });
     
     editBtn.addEventListener('click', function() {
-        window.location.href = `company-edit.html?id=${companyId}`;
+        navigateTo('company-edit.html', { id: companyId });
     });
     
     createInvoiceBtn.addEventListener('click', function() {
-        // Store the company ID in sessionStorage to pre-select it in the invoice form
-        sessionStorage.setItem('preselectedCompany', companyId);
-        window.location.href = 'invoice-form.html';
+        // Use the preSelectCompany function from app.js
+        preSelectCompany(companyId);
     });
     
     // Load data
     loadCompanyData();
 });
+

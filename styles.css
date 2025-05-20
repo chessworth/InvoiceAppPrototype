@@ -11,11 +11,15 @@ body {
 }
 
 .container {
-    max-width: 800px;
     width: 90%;
+    max-width: 800px;
     margin: 50px auto;
     padding: 20px;
     text-align: center;
+}
+
+.container:has(.table-container) {
+    max-width: 95%;
 }
 
 h1 {

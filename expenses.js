@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.edit-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const expenseId = this.getAttribute('data-id');
-                window.location.href = `expense-edit.html?id=${expenseId}`;
+                navigateTo('expense-edit.html', { id: expenseId });
             });
         });
         
@@ -288,11 +288,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Event listeners
     backBtn.addEventListener('click', function() {
-        window.location.href = 'index.html';
+        navigateTo('index.html');
     });
     
     addExpenseBtn.addEventListener('click', function() {
-        window.location.href = 'expense-form.html';
+        navigateTo('expense-form.html');
     });
     
     searchBtn.addEventListener('click', searchExpenses);
@@ -362,5 +362,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial load
     loadExpenses();
 });
+
 
 

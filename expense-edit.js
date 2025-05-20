@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!expenseId) {
         alert('No expense ID provided');
-        window.location.href = 'expenses.html';
+        navigateTo('expenses.html');
         return;
     }
     
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!expense) {
             alert('Expense not found');
-            window.location.href = 'expenses.html';
+            navigateTo('expenses.html');
             return;
         }
         
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cancel button
     cancelBtn.addEventListener('click', function() {
-        window.location.href = 'expenses.html';
+        navigateTo('expenses.html');
     });
     
     // Form submission
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('expenses', JSON.stringify(expenses));
         
         alert('Expense updated successfully!');
-        window.location.href = 'expenses.html';
+        navigateTo('expenses.html');
     });
     
     // Initialize

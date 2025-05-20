@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.edit-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const companyId = this.getAttribute('data-id');
-                window.location.href = `company-edit.html?id=${companyId}`;
+                navigateTo('company-edit.html', { id: companyId });
             });
         });
         
@@ -151,11 +151,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Event listeners
     backBtn.addEventListener('click', function() {
-        window.location.href = 'index.html';
+        navigateTo('index.html');
     });
     
     addCompanyBtn.addEventListener('click', function() {
-        window.location.href = 'company-form.html';
+        navigateTo('company-form.html');
     });
     
     searchBtn.addEventListener('click', searchCompanies);
@@ -223,6 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
     SELECT COUNT(*) FROM invoices WHERE company_id = :companyId;
     */
 });
+
 
 
 

@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!invoiceId) {
         alert('No invoice ID provided');
-        window.location.href = 'invoices.html';
+        navigateTo( 'invoices.html');
         return;
     }
     
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add new company button
     addCompanyBtn.addEventListener('click', function() {
-        window.location.href = 'company-form.html';
+        navigateTo( 'company-form.html');
     });
     
     // Add item row
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!invoice) {
             alert('Invoice not found');
-            window.location.href = 'invoices.html';
+            navigateTo( 'invoices.html');
             return;
         }
         
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cancel button
     cancelBtn.addEventListener('click', function() {
-        window.location.href = 'invoice-view.html?id=' + invoiceId;
+        navigateTo( 'invoice-view.html', { id: invoiceId });
     });
     
     // Form submission
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('invoices', JSON.stringify(invoices));
         
         alert('Invoice updated successfully!');
-        window.location.href = 'invoice-view.html?id=' + invoiceId;
+        navigateTo( 'invoice-view.html', { id: invoiceId });
     });
     
     // Initial load

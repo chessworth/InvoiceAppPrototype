@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add new company button
     addCompanyBtn.addEventListener('click', function() {
-        window.location.href = 'company-form.html';
+        navigateTo('company-form.html');
     });
     
     // Add item row
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cancel button
     cancelBtn.addEventListener('click', function() {
-        window.location.href = 'index.html';
+        navigateTo('index.html');
     });
     
     // Form submission
@@ -261,9 +261,10 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('lastInvoiceNumber', invoiceNumber.value);
         
         alert('Invoice generated successfully!');
-        window.location.href = 'index.html';
+        navigateTo('index.html');
     });
 });
+
 
 
 

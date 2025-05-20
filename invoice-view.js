@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!invoiceId) {
         alert('No invoice ID provided');
-        window.location.href = 'invoices.html';
+        navigateTo('invoices.html');
         return;
     }
     
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!invoice) {
             alert('Invoice not found');
-            window.location.href = 'invoices.html';
+            navigateTo('invoices.html');
             return;
         }
         
@@ -128,11 +128,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Event listeners
     backBtn.addEventListener('click', function() {
-        window.location.href = 'invoices.html';
+        navigateTo('invoices.html');
     });
     
     editBtn.addEventListener('click', function() {
-        window.location.href = `invoice-edit.html?id=${invoiceId}`;
+        navigateTo('invoice-edit.html', { id: invoiceId });
     });
     
     printBtn.addEventListener('click', function() {
@@ -142,4 +142,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load data
     loadInvoiceData();
 });
+
 

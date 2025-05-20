@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!companyId) {
         alert('No company ID provided');
-        window.location.href = 'companies.html';
+        navigateTo('companies.html');
         return;
     }
     
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!company) {
             alert('Company not found');
-            window.location.href = 'companies.html';
+            navigateTo('companies.html');
             return;
         }
         
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cancel button
     cancelBtn.addEventListener('click', function() {
-        window.location.href = `company-view.html?id=${companyId}`;
+        navigateTo('company-view.html', { id: companyId });
     });
     
     // Form submission
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('companies', JSON.stringify(companies));
         
         alert('Company updated successfully!');
-        window.location.href = `company-view.html?id=${companyId}`;
+        navigateTo('company-view.html', { id: companyId });
     });
     
     // Initial load

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cancel button
     cancelBtn.addEventListener('click', function() {
-        window.location.href = 'index.html';
+        navigateTo('index.html');
     });
     
     // Form submission
@@ -47,6 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('expenses', JSON.stringify(expenses));
         
         alert('Expense saved successfully!');
-        window.location.href = 'expenses.html';
+        navigateTo('expenses.html');
     });
 });
