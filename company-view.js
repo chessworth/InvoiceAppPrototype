@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const statusClass = invoice.paymentStatus === 'unpaid' ? 'status-unpaid' : `status-${invoice.paymentStatus}`;
             html += `
                 <tr class="${statusClass}">
-                    <td>${invoice.invoiceNumber}</td>
+                    <td><a href="#" class="invoice-number-link" data-id="${invoice.id}">${invoice.invoiceNumber}</a></td>
                     <td>${invoice.dateCreated}</td>
                     <td>${invoice.items.length}</td>
                     <td>$${invoice.pricing.total.toFixed(2)}</td>
@@ -71,6 +71,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         invoicesTableBody.innerHTML = html;
+        
+        // Add event listeners to invoice number links
+        document.querySelectorAll('.invoice-number-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const invoiceId = this.getAttribute('data-id');
+                navigateTo('invoice-view.html', { id: invoiceId });
+            });
+        });
         
         // Add event listeners to view buttons
         document.querySelectorAll('.view-btn').forEach(btn => {
@@ -281,5 +290,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load data
     loadCompanyData();
 });
+
 
 

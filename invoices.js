@@ -59,9 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const statusClass = invoice.paymentStatus === 'unpaid' ? 'status-unpaid' : `status-${invoice.paymentStatus}`;
             html += `
                 <tr class="${statusClass}">
-                    <td>${invoice.invoiceNumber}</td>
+                    <td><a href="#" class="invoice-number-link" data-id="${invoice.id}">${invoice.invoiceNumber}</a></td>
                     <td>${invoice.dateCreated}</td>
-                    <td>${invoice.companyName}</td>
+                    <td><a href="#" class="company-name-link" data-id="${invoice.companyId}">${invoice.companyName}</a></td>
                     <td>${invoice.items.length}</td>
                     <td>$${invoice.pricing.subtotal.toFixed(2)}</td>
                     <td>$${invoice.pricing.hst.toFixed(2)}</td>
@@ -77,6 +77,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         invoicesTableBody.innerHTML = html;
+        
+        // Add event listeners to invoice number links
+        document.querySelectorAll('.invoice-number-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const invoiceId = this.getAttribute('data-id');
+                navigateTo('invoice-view.html', { id: invoiceId });
+            });
+        });
+        
+        // Add event listeners to company name links
+        document.querySelectorAll('.company-name-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const companyId = this.getAttribute('data-id');
+                navigateTo('company-view.html', { id: companyId });
+            });
+        });
         
         // Add event listeners to action buttons
         document.querySelectorAll('.view-btn').forEach(btn => {
@@ -286,6 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
     DELETE FROM invoices WHERE id = :invoiceId;
     */
 });
+
 
 
 

@@ -185,6 +185,18 @@ tr:hover {
     background-color: #45a049;
 }
 
+/* Clickable links in tables */
+.company-name-link, .invoice-number-link {
+    color: #3498db;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.company-name-link:hover, .invoice-number-link:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
 @media (max-width: 768px) {
     .search-filter-container {
         flex-direction: column;
@@ -209,3 +221,4 @@ tr:hover {
         overflow-x: auto;
     }
 }
+

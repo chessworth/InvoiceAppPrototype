@@ -46,13 +46,14 @@ document.addEventListener('DOMContentLoaded', function() {
         companiesForPage.forEach(company => {
             html += `
                 <tr>
-                    <td>${company.name}</td>
+                    <td><a href="#" class="company-name-link" data-id="${company.id}">${company.name}</a></td>
                     <td>${company.streetAddress}</td>
                     <td>${company.city}</td>
                     <td>${company.postalCode}</td>
                     <td>${company.telephone}</td>
                     <td>${company.email}</td>
                     <td>
+                        <button class="action-btn view-btn" data-id="${company.id}">View</button>
                         <button class="action-btn edit-btn" data-id="${company.id}">Edit</button>
                         <button class="action-btn delete-btn" data-id="${company.id}">Delete</button>
                     </td>
@@ -62,7 +63,23 @@ document.addEventListener('DOMContentLoaded', function() {
         
         companiesTableBody.innerHTML = html;
         
+        // Add event listeners to company name links
+        document.querySelectorAll('.company-name-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const companyId = this.getAttribute('data-id');
+                navigateTo('company-view.html', { id: companyId });
+            });
+        });
+        
         // Add event listeners to action buttons
+        document.querySelectorAll('.view-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const companyId = this.getAttribute('data-id');
+                navigateTo('company-view.html', { id: companyId });
+            });
+        });
+        
         document.querySelectorAll('.edit-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const companyId = this.getAttribute('data-id');
@@ -223,6 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
     SELECT COUNT(*) FROM invoices WHERE company_id = :companyId;
     */
 });
+
 
 
 
