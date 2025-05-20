@@ -68,9 +68,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td>$${invoice.pricing.total.toFixed(2)}</td>
                     <td>${invoice.paymentStatus}</td>
                     <td>
-                        <button class="action-btn view-btn" data-id="${invoice.id}">View</button>
-                        <button class="action-btn edit-btn" data-id="${invoice.id}">Edit</button>
-                        <button class="action-btn delete-btn" data-id="${invoice.id}">Delete</button>
+                        <div class="action-btn-group">
+                            <button class="action-btn view-btn" data-id="${invoice.id}">View</button>
+                            <button class="action-btn edit-btn" data-id="${invoice.id}">Edit</button>
+                            <button class="action-btn delete-btn" data-id="${invoice.id}">Delete</button>
+                        </div>
                     </td>
                 </tr>
             `;
@@ -304,6 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
     DELETE FROM invoices WHERE id = :invoiceId;
     */
 });
+
 
 
 

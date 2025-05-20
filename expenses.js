@@ -187,8 +187,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td>${expense.description || '-'}</td>
                     <td>$${expense.amount.toFixed(2)}</td>
                     <td>
-                        <button class="edit-btn" data-id="${expense.id}">Edit</button>
-                        <button class="delete-btn" data-id="${expense.id}">Delete</button>
+                        <div class="action-btn-group">
+                            <button class="action-btn edit-btn" data-id="${expense.id}">Edit</button>
+                            <button class="action-btn delete-btn" data-id="${expense.id}">Delete</button>
+                        </div>
                     </td>
                 </tr>
             `;
@@ -362,6 +364,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial load
     loadExpenses();
 });
+
 
 
 

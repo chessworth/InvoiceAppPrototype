@@ -279,7 +279,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     createInvoiceBtn.addEventListener('click', function() {
-        // Use the preSelectCompany function from app.js
         preSelectCompany(companyId);
     });
     
@@ -290,6 +289,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load data
     loadCompanyData();
 });
+
 
 
 

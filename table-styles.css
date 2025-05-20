@@ -46,15 +46,23 @@ tr:hover {
     color: #2e7d32;
 }
 
+/* Action button group */
+.action-btn-group {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    justify-content: flex-start;
+}
+
 .action-btn {
     background-color: #2196F3;
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 5px 10px;
-    margin-right: 5px;
+    padding: 9px 16px;
     cursor: pointer;
     font-size: 0.8rem;
+    flex: 0 0 auto;
 }
 
 .action-btn:hover {
@@ -213,12 +221,19 @@ tr:hover {
     }
     
     .action-btn {
-        padding: 4px 8px;
+        padding: 8px 12px;
         font-size: 0.7rem;
+        margin-bottom: 0;
+        flex: 0 0;
     }
 
     .table-container {
         overflow-x: auto;
     }
+
+    .action-btn-group {
+        gap: 3px;
+    }
 }
+
 

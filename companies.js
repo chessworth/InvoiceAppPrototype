@@ -53,9 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td>${company.telephone}</td>
                     <td>${company.email}</td>
                     <td>
-                        <button class="action-btn view-btn" data-id="${company.id}">View</button>
-                        <button class="action-btn edit-btn" data-id="${company.id}">Edit</button>
-                        <button class="action-btn delete-btn" data-id="${company.id}">Delete</button>
+                        <div class="action-btn-group">
+                            <button class="action-btn view-btn" data-id="${company.id}">View</button>
+                            <button class="action-btn edit-btn" data-id="${company.id}">Edit</button>
+                            <button class="action-btn delete-btn" data-id="${company.id}">Delete</button>
+                        </div>
                     </td>
                 </tr>
             `;
@@ -240,6 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
     SELECT COUNT(*) FROM invoices WHERE company_id = :companyId;
     */
 });
+
 
 
 
