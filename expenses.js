@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td>${capitalizeFirstLetter(expense.type)}</td>
                     <td>${expense.description || '-'}</td>
                     <td>$${expense.amount.toFixed(2)}</td>
-                    <td>
+                    <td colspan="2">
                         <div class="action-btn-group">
                             <button class="action-btn edit-btn" data-id="${expense.id}">Edit</button>
                             <button class="action-btn delete-btn" data-id="${expense.id}">Delete</button>
