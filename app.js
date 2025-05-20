@@ -805,28 +805,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Centralized navigation function
-    window.navigateTo = function(page, params = {}) {
-        let url = page;
-        
-        // Add query parameters if provided
-        if (Object.keys(params).length > 0) {
-            const queryParams = new URLSearchParams();
-            for (const key in params) {
-                queryParams.append(key, params[key]);
-            }
-            url += `?${queryParams.toString()}`;
-        }
-        
-        navigateTo(url);
-    };
-    
-    // Store company ID in session storage for pre-selection
-    window.preSelectCompany = function(companyId) {
-        sessionStorage.setItem('preselectedCompany', companyId);
-        navigateTo('invoice-form.html');
-    };
-    
     createInvoiceBtn.addEventListener('click', function() {
         navigateTo('invoice-form.html');
     });
@@ -851,14 +829,4 @@ document.addEventListener('DOMContentLoaded', function() {
         navigateTo('expenses.html');
     });
 });
-
-
-
-
-
-
-
-
-
-
 
